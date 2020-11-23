@@ -1,0 +1,23 @@
+import { Selector, t } from 'testcafe'
+import Navbar from '../page-objects/components/Navbar'
+import SearchResultsPage from '../page-objects/pages/SearchResultsPage'
+
+const navbar = new Navbar()
+const searchResultsPage = new SearchResultsPage()
+// prettier-ignore
+fixture `Search box test`
+.page `http://zero.webappsecurity.com/index.html`
+
+test('User can search for information using search box', async (t) => {
+	// Get Selector
+	// const resultsTitle = Selector('h2')
+	// const linkText = Selector('div').innerText
+	// Actions
+	navbar.search('online banking')
+	// Assertions
+	await t.expect(searchResultsPage.resultsTitle.exists).ok
+	await t.expect(navbar.searchBox.exists).ok
+	await t
+		.expect(searchResultsPage.linkText.innerText)
+		.contains('Zero - Free Access to Online Banking')
+})

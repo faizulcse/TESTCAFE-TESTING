@@ -4,4 +4,4 @@ fixture`Getting started with TestCafe`.page(
 	'https://devexpress.github.io/testcafe/example/'
 )
 
-test.only('My First testcafe test', async (t) => {})
+test('My First testcafe test', async (t) => {})
