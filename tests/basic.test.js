@@ -20,7 +20,11 @@ fixture `Getting started with TestCafe`
 
 test('My First testcafe test', async (t) => {
 	//Here goes testcafe code
-	await t.typeText('#developer-name', 'Jhon')
-	await t.click('#submit-button')
-	await t.expect(Selector('#article-header').innerText).contains('Jhon')
+	// await t.typeText('#developer-name', 'Jhon')
+	// await t.click('#submit-button')
+	// await t.expect(Selector('#article-header').innerText).contains('Jhon')
+
+	console.log(t.testRun.test.name)
+	console.log(t.testRun.test.testFile.currentFixture.name)
+	console.log(t)
 })

@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "testcafe chrome ./tests",
-    "test:chrome": "testcafe chrome ./tests",
-    "test:chrome:headless": "testcafe chrome:headless ./tests",
+    "test:chrome": "testcafe 'chrome' ./tests",
+    "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true",
     "test:chrome:mobile": "testcafe chrome:emulation:device=iphone X ./tests",
     "test:safari": "testcafe safari ./tests",
     "test:firefox": "testcafe firefox ./tests",
-    "test:edge": "testcafe edge ./tests"
+    "test:edge": "testcafe edge ./tests",
+    "start-jenkins-server": "java -jar jenkins.war -httpPort=8080 --enable-future-java",
+    "jenkins-server-start": "brew services start jenkins-lts",
+    "jenkins-server-stop": "brew services stop jenkins-lts",
+    "jenkins-server-restart": "brew services restart jenkins-lts"
   },
   "author": "",
   "license": "ISC",
